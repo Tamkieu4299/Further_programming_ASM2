@@ -2,24 +2,22 @@ package com.asm2.taxisys.entity;
 
 import java.time.ZonedDateTime;
 
-public class Driver extends User {
+public class Driver {
+    private Long id;
     private Long licenseNumber;
     private Double rating;
     private Car car;
+    private ZonedDateTime date;
 
-    public Driver() {};
-    public Driver(Long id, String name, String phone, String address, ZonedDateTime date, Long licenseNumber, Double rating) {
-        super(id, name, phone, address, date);
-        this.licenseNumber = licenseNumber;
-        this.rating = rating;
-        this.car = null;
+
+    public Driver(){}
+
+    public Long getId() {
+        return id;
     }
 
-    public Driver(Long id, String name, String phone, String address, ZonedDateTime date, Long licenseNumber, Double rating, Car car) {
-        super(id, name, phone, address, date);
-        this.licenseNumber = licenseNumber;
-        this.rating = rating;
-        this.car = car;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getLicenseNumber() {
@@ -44,6 +42,14 @@ public class Driver extends User {
 
     public void setCar(Car car) {
         this.car = car;
+    }
+
+    public ZonedDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(ZonedDateTime date) {
+        this.date = date;
     }
 }
 
